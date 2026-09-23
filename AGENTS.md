@@ -67,6 +67,24 @@ If a risk is only theoretical and has not been demonstrated or cannot be derived
 
 Prefer the smallest implementation that provides the required safety for the current issue.
 
+### Long-running secondary issues
+
+Do not always aim to fully resolve a small technical issue immediately when it is peripheral to the main development work and likely to consume substantial time.
+
+Resolve an issue in place when it blocks progress, breaks a core feature, risks data loss, crashes, or serious inconsistency, or is likely to significantly damage later design work.
+
+For special cases, fine-grained Live / Max / Max for Live behavior, issues with a safe workaround, or issues that can be temporarily handled while the main work continues, consider tracking and deferring the root fix before spending hours on it. In particular, if investigating one secondary issue is likely to stop the main work for 2–3 hours or more, reassess whether to solve it now or record it and continue with a safe interim approach.
+
+When deferring a root fix:
+
+1. Record the issue in GitHub with the observed behavior, reproduction conditions, investigation completed, and unresolved questions.
+2. Use a safe interim response or workaround when one is available.
+3. Clearly mark the response as temporary in code, the issue, or both.
+4. Continue the main development work.
+5. Record in the issue what conditions should trigger the root fix later.
+
+Deferral is managed follow-up, not abandonment. Do not force a workaround if it would make later root-cause analysis harder or could introduce a serious defect. This issue-first fallback complements the early official and community research policy in Section 2; it does not replace that research. The Rename issue is a representative example of a secondary issue that may be tracked while the main work continues when these conditions apply.
+
 ---
 
 ## 4. Live API and asynchronous behavior
